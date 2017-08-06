@@ -54,7 +54,9 @@ void sort(int stack[], int *top, int size)
         // push temp in tempory of stack
         push(temp_stack,size,&top2,temp);
     }
-    display(temp_stack,&top2);
+    for(int i=0;i<size;i++)
+        push(stack,size,top,pop(temp_stack,&top2));
+    display(stack,top);
 }
 
 int main()
