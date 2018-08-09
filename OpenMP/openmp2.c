@@ -1,3 +1,4 @@
+//Check number of CPUs and Threads
 #include <omp.h>
 #include <stdio.h>
 #include <stdlib.h>

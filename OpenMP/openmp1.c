@@ -1,3 +1,4 @@
+//OpenMP - 101
 #include <omp.h>
 #include <stdio.h>
 #include <stdlib.h>

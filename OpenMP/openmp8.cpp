@@ -1,3 +1,4 @@
+//Print version of openmp on your system
 #include <unordered_map>
 #include <cstdio>
 #include <omp.h>
