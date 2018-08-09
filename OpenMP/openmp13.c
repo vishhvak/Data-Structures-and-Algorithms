@@ -1,5 +1,5 @@
 //Count vowels and consonants, from a text file's contents
-// a.txt = This is to count the number of vowels and consonants.
+// x.txt = This is to count the number of vowels and consonants.
 #include<stdio.h>
 #include<omp.h>
 #include<stdlib.h>
@@ -10,35 +10,35 @@
 int main()
 {
 	int i;
-	char a[500];
-	char b[100];
+	char x[500];
+	char y[100];
 	FILE *file;
-	file=fopen("a.txt","r");
-	while(fgets(b, 100, (FILE*)file))
-		strcat(a,b);
-	int len=strlen(a);
+	file=fopen("x.txt","r");
+	while(fgets(y, 100, (FILE*)file))
+		strcat(x,y);
+	int len=strlen(x);
 	fclose(file);
 	#pragma omp parallel sections
 	{
 		#pragma omp section
 		{	
-			int sum=0;
+			int count=0;
 			#pragma omp parallel for num_threads(2)
 				for(i=0;i<len;i++)
-					if(isalpha(a[i]))
-						if(a[i]=='a' || a[i]=='e' || a[i]=='i' || a[i]=='o' || a[i]=='u' || a[i]=='A' || a[i]=='E' || a[i]=='I' || a[i]=='O' || a[i]=='U')
-							sum+=1;
-				printf("Vowels: %d\n",sum);
+					if(isalpha(x[i]))
+						if(x[i]=='a' || x[i]=='e' || x[i]=='i' || x[i]=='o' || x[i]=='u' || x[i]=='A' || x[i]=='E' || x[i]=='I' || x[i]=='O' || x[i]=='U')
+							count+=1;
+				printf("Vowels: %d\n",count);
 		}
 		#pragma omp section
 		{	
-			int sum=0;
+			int count=0;
 			#pragma omp parallel for num_threads(2)
 				for(i=0;i<len;i++)
-					if(isalpha(a[i]))
-						if(!(a[i]=='a' || a[i]=='e' || a[i]=='i' || a[i]=='o' || a[i]=='u' || a[i]=='A' || a[i]=='E' || a[i]=='I' || a[i]=='O' || a[i]=='U'))
-						sum+=1;
-				printf("Consonants: %d\n",sum);
+					if(isalpha(x[i]))
+						if(!(x[i]=='a' || x[i]=='e' || x[i]=='i' || x[i]=='o' || x[i]=='u' || x[i]=='A' || x[i]=='E' || x[i]=='I' || x[i]=='O' || x[i]=='U'))
+						count+=1;
+				printf("Consonants: %d\n",count);
 		}
 		
 	}	
