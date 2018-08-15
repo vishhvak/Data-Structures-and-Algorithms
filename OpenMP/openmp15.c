@@ -4,11 +4,11 @@
 int main()
 {
     int arr[100000];
-    omp_set_num_threads(2);
     int m=0;
     int i;
     for( i=0; i<100000; i++)
         arr[i] = 2 + i;
+    arr[25]=999999; //assigning max element for simplicity
     #pragma omp parallel for reduction(max : m)
     for( i=0;i<100000; i++)
     {
