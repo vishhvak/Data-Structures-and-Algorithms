@@ -30,13 +30,13 @@ int main (int argc, char *argv[]) {
 		for(j = 0; j < m; j++) 
 			c[i][j] = a[i][j] + b[i][j];
 
-	/* To Print Sum Matrix	
+	//To Print Sum Matrix	
 	printf("\nPrinting Sum Matrix\n");
 	for(i = 0; i < n; i++) {
 		for(j = 0; j < m; j++)  
 			printf("\t%d",c[i][j]);
 		printf("\n");
-	}*/
+	}
 }
 
 /*Execution Time
