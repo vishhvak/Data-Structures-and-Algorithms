@@ -14,6 +14,7 @@ void* vowels(void* data)
    	count++;
    }
    printf("Number of vowels is %d\n", count);
+   return NULL;
 }
 
 void* consonants(void* data)
@@ -24,9 +25,10 @@ void* consonants(void* data)
     l = strlen(string);
     conso = l - count;
     printf("Number of consonants is %d\n", conso);
+    return NULL;
 }
 
-void main()
+int main()
 {
     FILE * fp; 
     char str1[10];
@@ -38,7 +40,7 @@ void main()
     pthread_join(t1,NULL);
     pthread_create(&t2,NULL, consonants, &str1);
     pthread_join(t2,NULL);
-
+    return 0;
 }
 
 
