@@ -1,6 +1,5 @@
 //Vector Addition using sections
 #include<omp.h>
-#pragma omp_set_nested(true)
 
 int a[1000],b[1000];
 

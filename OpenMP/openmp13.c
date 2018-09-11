@@ -5,7 +5,6 @@
 #include<stdlib.h>
 #include<ctype.h>
 #include<string.h>
-#pragma omp_set_nested(true)
 
 int main()
 {

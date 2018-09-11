@@ -1,7 +1,6 @@
 //Using Reduction
 #include<stdio.h>
 #include<omp.h>
-#pragma omp_set_nested(true)
 
 int x[1000],y[1000];
 
